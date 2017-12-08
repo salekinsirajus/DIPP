@@ -1,15 +1,8 @@
 # Should handle concurrent clients
-<<<<<<< HEAD
-
-import socket
-=======
->>>>>>> 8e71221d8fb54bc1bbe420a0da049e299ec14f52
 import signal
 import socket
 import os
 import subprocess
-
-from tmp import res     # temporary req-res secenario
 
 def run_cmd (conn):
     BUFFER_SIZE = 1024
@@ -48,12 +41,19 @@ def handle_request(client_connection):
     while True:
         request = client_connection.recv(1024)
         print (request)
-        req = request.decode()
-        if req == "exit":
-            break
-        response = res(request)
+        print (request.decode())
+        response = request      # echo
         client_connection.sendall(response)
-    client_connection.close()
+        if request.decode() == "exit":
+            print ("About to close connection with client")
+            client_connection.close() #??
+            return 0
+        elif request.decode () == "cmdline":
+            # Give access to a command line
+            print ("Can run a command line now from the client")
+            run_cmd(client_connection)
+        else:
+            pass
     return
 
 def listen_server():

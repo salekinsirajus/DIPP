@@ -1,9 +1,6 @@
 # Should handle concurrent clients
-<<<<<<< HEAD
 
 import socket
-=======
->>>>>>> 8e71221d8fb54bc1bbe420a0da049e299ec14f52
 import signal
 import socket
 import os

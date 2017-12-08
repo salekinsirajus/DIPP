@@ -6,7 +6,6 @@
 #
 ##############################################################################
 # UPDATE/TODO:
-#
 # This is a staructural view of the client program.
 # Although we produced a state diagram, we need to 
 # make sure if we need states in our program, and if so
@@ -15,13 +14,11 @@
 ##############################################################################
 #
 # Discussion:
-# 
 # A client can move between a few states = {Registered, connected, disconnected
 # everything_else}
 # * Registered: has a netID/IP address available
 # * Connected: active and part of the network
 # * Disconnected: Not connected/power_down, but still part of the network
-#
 # In a tabular form:
 #       +------------+---------+--------------------------------+    
 #       |Variables-> |  netID  | 
@@ -67,7 +64,6 @@ def initSocket(service_type):
         print ("Socket creation unsuccessfull")
         return e
     return sock
-
 
 def connectNode(sock, address, port):
     """Return a connection based on the socket, address and port"""
