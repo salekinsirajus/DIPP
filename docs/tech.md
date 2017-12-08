@@ -55,3 +55,10 @@ Technical Challenges:
             this could be a great addition though: theoritically, any machine
             can directly talk to any other machine. (does ipv6 provides a 
             solution to this problem? Probably not)
+
+        5. Determinism:
+            Determinism is helpful and makes the protocol more robust, and easy
+            to implement. However, we need to find a balance between making the
+            network deterministic, and not restricting the flow of data. 
+            According message exchange patterns, we need to see how that play
+            out: req-res, pub-sub and free form?? 

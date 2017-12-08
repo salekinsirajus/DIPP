@@ -25,6 +25,27 @@ Basic Structure:
     devices is that they are heterogeneous, and comes in wildly different
     configurations.
 
+Message Structure
+    Instead of deciding these are contents a node has to provide, we will leave
+    that decision to the implementers/developers. However, there should be nice
+    modular structue for doing that. Basically, we will provide a structure,
+    and the implementers are free to implement whatever they want. We can also
+    provide frequently used services.
+
+    Each node can provide some contents/service to the participating nodes. 
+    For example, a humidity sensor node would definitely provide the services
+    that will send the reading of current humidity in the room.
+
+
+            REQ | SERVICE | READING | HUMIDITY SENSOR
+    However, every node is required to provide the following services:
+
+            REQ | SERVICE | LIST
+        This send an available list of services provided by the node
+            REQ | SERVICE | 
+
+
+
 Message Exchange Pattern:
     So far, we designed our protocol around request-response pattern. Although
     this model very prevalent in client-server interaction based protocol, we
@@ -32,3 +53,19 @@ Message Exchange Pattern:
     publisher-subscriber scenario, which might be efficient for power-
     constrained sensor devices. (We need to figure out how these two live in 
     harmony and peace)
+
+    Let's talk about each models, and compare it against the requirement of 
+    our protocol.
+
+    * Request-Response: It can be synchronus and asynchronus. Synchronus means
+    that after sending a request, the reciever has to respond within a certain
+    timelimit. Asynchronus means there is no time out for the request, and the
+    responder can respond at a later time. Now, it seems that for our purposes,
+    asynchronus should work fine. Adding time limit adds more complexity.
+
+    However, as we plan to utilize the local resources more effectively, once 
+    a connection is established, it is not necessary to require a reply with
+    every response, especially on top of TCP.
+
+    * Security: We are considering using TLS/SSL. (or use one of the robust
+    but lighweight security systems)  

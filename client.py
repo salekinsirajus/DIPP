@@ -101,12 +101,27 @@ def sendMessage(sock, msg):
         return 1
     return 0
 
+def recvMessage(sock):
+    """
+    Returns the messages sent using a socket. 
+    """
+    BUFFER_SIZE = 1024
+    try:
+        reply = sock.recv(BUFFER_SIZE)
+    except Exception as e:
+        print ("Message receiving error: {}".format(e))
+    decoded_msg = reply.decode()
+    return decoded_msg    
+
 if __name__ == '__main__':
     tcp = initSocket('SOCK_STREAM')
-    udp = initSocket('SOCK_DGRAM')
-    s = connectNode(tcp, '127.0.0.1', 9999)
-    sendMessage(s, "hello world")
+    ip = '192.168.240.1'
+    s = connectNode(tcp, ip, 9999)
+    while True:
+        msg = input("enter here: ")
+        if msg == "close":
+            break
+        sendMessage(s, msg)
+        
     tcp.close()
-    connectNode(udp, '127.0.0.1', 9999)
-    udp.close()
    # connectNode("test", tcp, udp)
