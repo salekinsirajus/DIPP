@@ -67,5 +67,17 @@ Message Exchange Pattern:
     a connection is established, it is not necessary to require a reply with
     every response, especially on top of TCP.
 
-    * Security: We are considering using TLS/SSL. (or use one of the robust
+    * Fire-and-Forget/: There are situations when only sending a message might
+    be all the devices need to do. There is no requirement for reply within a
+    timelimit. The format for such messages could be FNF | <Message Body>
+    (also known as DATAGRAM)
+
+    * Push-Pull: Push-Pull could be seen as the opposite of request-response.
+    In req-res model, initiating host typically wants to receive some type of
+    contents, whereas in push-pull, it is similar to sending some data to a
+    device, asking something to do with it, and getting the result back.
+    (However we need to see if this can be modeled after a client response 
+    scenario)
+    
+Security: We are considering using TLS/SSL. (or use one of the robust
     but lighweight security systems)  
