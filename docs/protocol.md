@@ -44,8 +44,6 @@ Message Structure
         This send an available list of services provided by the node
             REQ | SERVICE | 
 
-
-
 Message Exchange Pattern:
     So far, we designed our protocol around request-response pattern. Although
     this model very prevalent in client-server interaction based protocol, we
@@ -79,5 +77,15 @@ Message Exchange Pattern:
     (However we need to see if this can be modeled after a client response 
     scenario)
     
+Encoding: DIPP is a simple text-based protocol. Most of the devices that would
+    use this protocol will exchange short amount of data, so using a text-based
+    protocol seemed to be the appropriate choice. Human rreadability was also
+    another important factor in our consideration. UTF-8 with MIME?
+
 Security: We are considering using TLS/SSL. (or use one of the robust
-    but lighweight security systems)  
+    but lighweight security systems)
+
+Authentication: authentication in a peer-to-peer network is a difficult task to
+    accomplish, due to the absence of a central server. We also needed to keep
+    the energy requiremnts and cost-effectiveness in mind before choosing an
+    authentication protocol. 

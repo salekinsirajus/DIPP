@@ -20,6 +20,7 @@ Errors and reports are divided into the following broad categories:
     
 
 # 3 : Error with the content
-    200 = Requested content not found
-    201 = Invalid Request
+    2001 = Requested content not found
+    2002 = Invalid Request
+    2003 = Service Not Implemented
 
