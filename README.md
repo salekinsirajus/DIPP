@@ -4,6 +4,8 @@
 This is the software implementation for a peer to peer network aimed at 
 Internet of Things (IoT) devices.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1098483.svg)](https://doi.org/10.5281/zenodo.1098483)
+
 ## Description:
 This project is an implementation of Senior Capstone Experience for Computer
 Science majors at Earlham College. The software accompanies a paper, which
