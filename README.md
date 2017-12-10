@@ -1,4 +1,6 @@
-# Peer to Peer for IoT devices
+# Decentralized IoT Peer-to-Peer Protocol (DIPP)
+
+## Peer to Peer for IoT devices
 This is the software implementation for a peer to peer network aimed at 
 Internet of Things (IoT) devices.
 
