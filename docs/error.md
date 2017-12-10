@@ -17,10 +17,17 @@ Errors and reports are divided into the following broad categories:
 
 # 2 : Errors on the network
     2001 = Host unreachable
-    
+        When a device is registered in the network but is unable to receive 
+        or send data, i.e., could be powered off.
+    2002 = Address Error (communicated from TCP)
+        When the IP or the port address is not correct
+    2003 = Host Not Registered
+    2004 = Firewall blocked?
+    2005 = Authentication Failure
+        When trying to register but didn't get the password or key right
 
 # 3 : Error with the content
-    2001 = Requested content not found
-    2002 = Invalid Request
-    2003 = Service Not Implemented
-
+    3001 = Requested content not found
+    3002 = Invalid Request
+    3003 = Service Not Implemented
+    2004 = Refused servic/content
