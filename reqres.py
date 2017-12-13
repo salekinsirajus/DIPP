@@ -22,7 +22,7 @@ def req_res(method, payload):
     elif method == 'RES':
         print ("No response. Can ask question")
         tuples = parse_payload(method, payload)
-        return "cannot respond without a request"
+        return "3006-Illegal-Command-Send-REQ\r\n"
     else:
         print ("Not part of request response model")
         return 

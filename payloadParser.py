@@ -36,12 +36,13 @@ def parse_payload(method, payload):
         # print ("f:v pairs")
         fv_pairs = payload.split()
         fv_tuples = []
-        for pair in fv_pairs:
-            (f,v) = pair.split(':')
-            fv_tuples.append((f,v))
-        #print (fv_tuples)
-        return fv_tuples
-
+        try:
+            for pair in fv_pairs:
+                (f,v) = pair.split(':')
+                fv_tuples.append((f,v))
+            return fv_tuples
+        except ValueError:
+            return "3005-Bad-Format"
     else:
         print ("not a valid message format")
         return None

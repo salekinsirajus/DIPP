@@ -20,14 +20,12 @@ def handle_request(client_connection):
         print ("raw msg recvd ", req_raw)
         req_decoded = req_raw.decode('utf-8')
         print (req_decoded)
+
         res_raw = method_parser(req_decoded)
-        print ("in handle req returned from method parser ",res_raw)
-#        if req_decoded == "exit":
-#            break
-#        res_raw = res(req_decoded)
-#        print ("from res() function ",res_raw)
-        res_encoded = res_raw.encode('utf-8')
-        client_connection.sendall(res_encoded)
+        while res_raw != None:
+            res_encoded = res_raw.encode('utf-8')
+            client_connection.sendall(res_encoded)
+            break
     client_connection.close()
     return
 
@@ -91,4 +89,4 @@ if __name__ == '__main__':
     tcp_port = 9999
     udp_port = 9998
     listen_tcp(host, tcp_port)
-    listen_udp(host, udp_port
+    listen_udp(host, udp_port)
