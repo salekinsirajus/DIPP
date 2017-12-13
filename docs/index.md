@@ -1,9 +1,10 @@
-theme: jekyll-theme-minimal
 # Decentralized IoT Peer-to-Peer Protocol (DIPP)
 
 ## Peer to Peer for IoT devices
 This is the software implementation for a peer to peer network aimed at 
 Internet of Things (IoT) devices.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1098483.svg)](https://doi.org/10.5281/zenodo.1098483)
 
 ## Description:
 This project is an implementation of Senior Capstone Experience for Computer
@@ -16,9 +17,12 @@ project website as well. If you have any question/suggestion, please send me an 
 ssalek14@earlham.edu
 
 ## Progress:
-1. Server capable of handing multiple concurrent connections
-2. Client with connecting and data excahnge capabilties
+1. Can receive push messages, i.e., PAK, PNF and respond with ACK messages
+2. Can receive and process REQ messages and resond back with RES.
 
 ## ToDo:
-- [ ] Produce a state diagram
-- [ ] Add more literature into the first draft of the paper
+- [x] Produce a state diagram
+- [x] Add more literature into the first draft of the paper
+- [ ] Enforce state in REQ-RES model
+- [ ] Provide client functions
+- [ ] Provide standard API functions for both models
