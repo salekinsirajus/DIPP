@@ -97,6 +97,9 @@ def sendMessage(sock, msg):
         return 1
     return 0
 
+def send_rcv(sock):
+    return
+
 def recvMessage(sock):
     """
     Returns the messages sent using a socket. 
@@ -111,7 +114,8 @@ def recvMessage(sock):
 
 if __name__ == '__main__':
     tcp = initSocket('SOCK_STREAM')
-    ip = '192.168.240.1'
+    ip = '127.0.0.1'
+    #ip = '192.168.240.1'
     s = connectNode(tcp, ip, 9999)
     while True:
         msg = input("enter here: ")

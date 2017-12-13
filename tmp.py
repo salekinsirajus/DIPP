@@ -1,34 +1,21 @@
-"""import csv
-
-qeuery = ['deliver', 'tempSensor']
-with open('dummy_data_index.csv', 'r') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row['owner'] == qeuery[1]:
-                print ("copy the file over the network")
-#                s.sendall('deliver'.encode('utf-8'))
-                filename = row['file_loc']
-                print (filename)
-"""
-# Doing a bunch of request-response scenario
+#Doing a bunch of request-response scenario
 import platform
+import random # to simulate a temp value
 
 def res(req):
-    node = platform.node()
-    machine = platform.machine()
-    os = platform.system()
-    neighbors = ['10.10.10.11', '10.10.11.11']
+    """ 
+    returns responses based on the query.
+    fieldnames are case insensitive. 
+    """
+    req = req.upper()
+    temp = random.randint(50,80)
+    temp = str(temp)
     return {
-        'name': 'nestThermostat',
-        'current': 65,
-        'address': '10.10.10.1',
-        'machine':machine,
-        'os':os,
-        'ip': node,
-        'nodeType': 'Node',
-        'storage': 'small',
-        'memory': 'small',
-        'neighbors':neighbors,
-        'passwod': 'torMayereBaap',
-        'status': ['active', 'down']
-    }.get(req, "Invalid")
+        'DEVICENAME': 'nestThermostat',
+        'DEVICETYPE': 'sensor',
+        'READINGTYPE': 'temperature',
+        'READINGUNIT': 'Fahrenhite',
+        'READINGCURRENT': temp,
+        'ISFULLNODE': 'False',
+        'ISALIVE': 'True',
+    }.get(req, "3004-Unrecognized-Field")

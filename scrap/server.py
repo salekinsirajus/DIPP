@@ -1,9 +1,4 @@
 # Should handle concurrent clients
-<<<<<<< HEAD
-
-import socket
-=======
->>>>>>> 8e71221d8fb54bc1bbe420a0da049e299ec14f52
 import signal
 import socket
 import os
@@ -46,13 +41,16 @@ def handle_request(client_connection):
     # BUFFER_SIZE = 1024
     print ("comes to handle_Request")
     while True:
-        request = client_connection.recv(1024)
-        print (request)
-        req = request.decode()
-        if req == "exit":
+        req_raw = client_connection.recv(1024)
+        print ("raw bites recvd ", req_raw)
+        req_decoded = req_raw.decode('utf-8')
+        print (req_decoded)
+        if req_decoded == "exit":
             break
-        response = res(request)
-        client_connection.sendall(response)
+        res_raw = res(req_decoded)
+        print ("from res() function ",res_raw)
+        res_encoded = res_raw.encode('utf-8')
+        client_connection.sendall(res_encoded)
     client_connection.close()
     return
 
