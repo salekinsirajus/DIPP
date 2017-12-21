@@ -24,18 +24,20 @@ ssalek14@earlham.edu
     ```
 3. Open a telnet connection:
     
-**Connect to the server over TCP**
+    **Connect to the server over TCP**
     ```
     telnet 127.0.0.1 9999
     ```
-**Or using UDP**
+    **Or using UDP**
     ```
     netcat -uv -u 127.0.0.1 9998
     ```
 4. Send a sample query over tcp:
     ```
     REQ deviceName
-    # or
+    ```
+    or 
+    ```
     REQ currentReading
     ```
 
