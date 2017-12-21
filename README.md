@@ -19,20 +19,25 @@ ssalek14@earlham.edu
 ## How To
 1. Clone this repo
 2. Run a TCP/UDP server by:
+    ```
     python core.py
+    ```
 3. Open a telnet connection:
-    **for tcp**
+    
+**Connect to the server over TCP**
     ```
     telnet 127.0.0.1 9999
     ```
-    **for udp**
+**Or using UDP**
     ```
     netcat -uv -u 127.0.0.1 9998
     ```
 4. Send a sample query over tcp:
+    ```
     REQ deviceName
-or
+    # or
     REQ currentReading
+    ```
 
 ## Progress:
 1. Can receive push messages, i.e., PAK, PNF and respond with ACK messages
