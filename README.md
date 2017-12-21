@@ -22,9 +22,13 @@ ssalek14@earlham.edu
     python core.py
 3. Open a telnet connection:
     **for tcp**
-    telnet 127.0.0.1 9999 
+    ```
+    telnet 127.0.0.1 9999
+    ```
     **for udp**
-    telnet -uv -u 127.0.0.1 9998
+    ```
+    netcat -uv -u 127.0.0.1 9998
+    ```
 4. Send a sample query over tcp:
     REQ deviceName
 or

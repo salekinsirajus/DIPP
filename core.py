@@ -26,6 +26,14 @@ def handle_request(client_connection):
             res_encoded = res_raw.encode('utf-8')
             client_connection.sendall(res_encoded)
             break
+#        print ("Want to send a req to client?")
+#        ask_back = input ("Enter 1 to ask, anything else to ignore")
+#        while ask_back == 1:
+#            print ("so you wanna ask a question?")
+#            new_req = input()
+#            encoded_req = new_req.encode('utf-8')
+#            client_connection.sendall(encoded_req)
+#            break
     client_connection.close()
     return
 
@@ -88,5 +96,20 @@ if __name__ == '__main__':
     host = '127.0.0.1'
     tcp_port = 9999
     udp_port = 9998
+
     listen_tcp(host, tcp_port)
+    
     listen_udp(host, udp_port)
+    """
+    choice = input("UDP or TCP: 1 for TCP and 2 for UDP. 0 to close\n")
+    print (choice)
+    while choice in [0,1,2]:
+        if choice == 1:
+            print("Initiated a TCP server at IP {} and port {}".format(host,tcp_port ))
+            listen_tcp(host, tcp_port)
+        elif choice == 2:
+            print("Initiated a UDP server at IP {} and port {}".format(host,udp_port ))
+            listen_udp(host, udp_port)
+        else:
+            exit()
+    """

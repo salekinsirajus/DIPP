@@ -25,5 +25,5 @@ def req_res(method, payload):
         return "3006-Illegal-Command-Send-REQ\r\n"
     else:
         print ("Not part of request response model")
-        return 
+        return "3007-Unrecognizable Method" 
 
